@@ -25,7 +25,8 @@ SECRET_KEY = 'w99pq0_cm!lsuk-$hc3sk-b1g6oxrbzqnhav8d8+miy=(iqrtk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['111.229.146.175']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['111.229.146.175']
 
 
 # Application definition
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'hello2app/templates')], # 添加模版路径
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
