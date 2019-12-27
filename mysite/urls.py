@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from helloapp import views
-from django.urls import include # 引入本地路由文件
+from django.urls import include # 引入本地路由文件，添加修改
 
 
 urlpatterns = [
     path('index/', views.hello),
     path('admin/', admin.site.urls),
     path('index2/', include('hello2app.urls')) # 本地路由关联
+
 ]
 
 
