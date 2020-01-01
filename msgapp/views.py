@@ -20,9 +20,12 @@ def homeproc1(request):
     return response
 
 
+# FileResponse 类
 def homeproc3(request):
     cwd = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     response = FileResponse(open(cwd + "/msgapp/templates/pythonlogo.jpg", "rb"))
+    # 两个标记：
+    # "Content-type" 指定文件类型
     response['Content-type'] = 'application/octet-stream'
     response['Content-Disposition'] = 'attachment;filename="pylogo.png"'
     return response
