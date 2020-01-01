@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from msgapp import views as msgviews
 from helloapp import views
 
 
@@ -23,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('helloapp.urls')),
     path('index2/', include('hello2app.urls')),  # 本地路由关联
+    path('', msgviews.homeproc3),
+    path('msggate/', views.hello)
 ]
