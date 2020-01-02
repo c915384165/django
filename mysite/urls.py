@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('helloapp.urls')),
     path('index2/', include('hello2app.urls')),  # 本地路由关联
-    path('', msgviews.homeproc3),
-    path('msggate/', views.hello)
+    path('', msgviews.homeproc1),
+    path('msggate/', views.hello),
+    path('playground/', msgviews.pgproc),
 ]

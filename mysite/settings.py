@@ -52,7 +52,7 @@ ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',  # 模版引擎后端配置变量
         'DIRS': [os.path.join(BASE_DIR, 'hello2app/templates'), os.path.join(BASE_DIR, 'helloapp/templates')],  # 添加模版路径
         'APP_DIRS': True,
         'OPTIONS': {

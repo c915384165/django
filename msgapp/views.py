@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse, FileResponse, HttpResponse, StreamingHttpResponse
+from django.template import Template, Context
 import os
+import json
+
+
 # Create your views here.
 
 
@@ -54,3 +58,24 @@ def big_file_download(request):
     fname = "data.txt"
     response = StreamingHttpResponse(file_iterator(fname))
     return response
+
+
+# Templates 的用法
+def pgproc(request):
+    template = Template("<h1>这个程序的名字是{{ name }}</h1>")
+    cwd = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    f = open(cwd + "/msgapp/test.json", "rt")
+    j = json.load(f)
+    context = Context(j)
+    # context = Context({"name": "实验平台"})
+    return HttpResponse(template.render(context))
+
+
+"""
+1）从类中导入模版类和context类
+2）模版，和文字
+3）渲染
+通过模版方法可以将数据与模版结合起来，生成动态的网页。渲染：链接数据与模版。
+模版：即半成品，这里指有动态缺口的html文件。
+数据：json格式的词典。
+"""
