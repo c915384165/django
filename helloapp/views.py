@@ -10,3 +10,7 @@ def hello(request):
 
 def hello_test(request):
     return render(request, "test_2.html")
+
+
+def mission1(request):
+    return render(request, "mission1.html")
